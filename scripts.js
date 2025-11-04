@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function() {
     
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-        let email = event.target[0].value;
+        let input = event.target[0];
+        let email = input.value;
         messageBox.textContent = email !== ""?`Thank you! Your email address ${email} has been added to our mailing list!`:"Please enter a valid email address";
-    })
-
-
+        input.value = "";
+    });
 });
